@@ -1,0 +1,91 @@
+#!/usr/bin/env node
+/**
+ * Module dependencies.
+ */
+// import app from '../app';
+// import http from 'http';
+// import https from 'https';
+// import config from "../src/config/settings";
+var http = require ('http');
+var app = require ('../app');
+var https = require('https');
+var config = require("../src/config/settings");
+
+// import helmet from "helmet";
+// var https = require('https');
+/**<added by wanjohi because of ssl certs> */
+var path = require('path');
+var fs = require('fs');
+// var httpOnly = process.env.HTTP;
+var liveEnvironment = config.server.liveEnvironment; //
+var port = config.server.port;
+if (liveEnvironment === true) { 
+  var options = {    
+    // key: fs.readFileSync(path.join(__dirname, '8712e2da336e36b9.pem')).toString(),
+    key: fs.readFileSync(path.join(__dirname, 'key.pem')).toString(),
+    // cert: fs.readFileSync(path.join(__dirname,'8712e2da336e36b9.crt')).toString(),
+    cert: fs.readFileSync(path.join(__dirname,'server.crt')).toString(), 
+    // ca: [fs.readFileSync(path.join(__dirname, 'gd_bundle-g2-g1.crt')).toString()]
+    ca: [fs.readFileSync(path.join(__dirname, 'server.crt')).toString()]
+
+  };
+  // console.dir(options);
+  var server = https.createServer(options, app);
+  // var server = http.createServer(app);
+} else {
+  var server = http.createServer(app);
+}
+/*
+ * Get port from environment and store in Express.
+*/
+// app.use(helmet());
+app.set('port', port);
+/**
+ * Create HTTP server.
+ */
+// var server = http.createServer(app);
+/**</added by wanjohi because of ssl certs> */
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+/**
+ * Event listener for HTTP server "error" event.
+ */
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+  console.log("SERVER RUNNING ON ==>>" );
+}
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+    console.dir(addr);
+    console.log("Server running on---.. ==>> " + addr.address + ":" + addr.port );
+}
+
+module.exports = server;

@@ -1,0 +1,59 @@
+{
+  "name": "API-V1",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./bin/www",
+  "scripts": {
+    "start": "nodemon --exec babel-node  ./bin/www",
+    "build": "babel src -d dist",
+    "test": " mocha --require babel-core/register tests/ --exit",
+    "models": "sequelize-auto -o './src/models' -d trucks2 -h localhost -u root -p 3306 -e mysql"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.4",
+    "@babel/runtime-corejs2": "^7.8.4",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^25.1.0",
+    "bcrypt": "^3.0.0",
+    "body-parser": "~1.18.2",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "^4.17.1",
+    "express-session": "^1.15.6",
+    "force": "0.0.3",
+    "helmet": "^3.21.2",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.1.0",
+    "md5": "^2.2.1",
+    "merge": "^1.2.1",
+    "mocha": "^5.2.0",
+    "morgan": "^1.9.1",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.2",
+    "nodemailer": "^4.6.2",
+    "pg": "^6.4.2",
+    "pg-hstore": "^2.3.2",
+    "pm2": "^4.2.3",
+    "regenerator-runtime": "^0.13.3",
+    "sequelize": "^5.21.4",
+    "sequelize-auto-v3": "^0.6.1",
+    "serve-favicon": "~2.4.5",
+    "sinon": "^6.1.5",
+    "yarn": "^1.22.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "nodemon": "^2.0.2"
+  },
+  "babelxx": {
+    "presets": [
+      "env"
+    ]
+  }
+}

@@ -8,7 +8,7 @@ module.exports = {
     },
     server : {
         port : 3002,
-        liveEnvironment : true,
+        liveEnvironment : false,
         urlPref: '/api/v1/'
     },
     security : {

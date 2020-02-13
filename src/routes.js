@@ -2,7 +2,6 @@ import  express   from 'express';
 import userCtrl from './controllers/Uccaduser.controller';
 import citiesSched from './controllers/Cities_scheduled.controller';
 import groupedcitiesSched from './controllers/Grouped_cities.controller';
-
 import auth from "../src/auth/middleware";
 /*
 	File cointaining all routes to the controllers of the platform

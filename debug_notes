@@ -1,4 +1,5 @@
 https://zerossl.com/
+https://www.codementor.io/@michaelumanah/how-to-set-up-babel-7-and-nodemon-with-node-js-pbj7cietc
 
 1. >>> npm install babel-jest babel-core@^7.0.0-bridge.0 @babel/core regenerator-runtime
 1. >>> npm install babel-jest babel-core@^7.0.0-bridge.0 @babel/core regenerator-runtime

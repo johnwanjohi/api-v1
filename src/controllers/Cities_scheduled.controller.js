@@ -4,71 +4,37 @@ import api from '../tools/common';
 import config from '../config/settings';
 
 function list(req, res) {
-  // models.users.findAll( {attributes: {
-  models.cities_scheduled.findAll( 
-    {
-      attributes: {
-        exclude: ['Password']
-      }
-    })
-    .then((data) => {
-      console.log(data)
-      api.ok(res, data);
-    });
+    // models.users.findAll( {attributes: {
+    models.cities_scheduled.findAll({
+            attributes: {
+                exclude: ['Password']
+            }
+        })
+        .then((data) => {
+            // console.log(data)
+            api.ok(res, data);
+        }).catch((e) => {
+            // console.log(req.body.password);
+            api.error(res, 'Error ' + e, 500);
+        });
 }
-/*
-function login(req, res, next){
-  models.uccaduser.find({
-    where : {
-      Login : req.body.username,
-      Password : req.body.password
-    }
-  }).then((userL) =>{
-    var data = userL.dataValues;
-    var theToken = jwt.sign({ IdUser : data.IdUser, username : data.Login}, config.security.salt, {expiresIn: 24 * 60 * 60});
-    api.ok(res, {'token' : theToken});
-  }).catch((e)=>{
-    api.error(res, 'Wrong credentials', 500);
-  });
 
-  }
-  
-  function register(req, res, next) {
-    models.user.build({
-      nickname : req.body.nickname,
-      name : req.body.name,
-      lastname : req.body.lastname,
-      phone : req.body.phone,
-      email : req.body.email,
-      password : req.body.password,
-      role_id : req.body.role_id
+function scheduledroutes(req, res) {
+    // models.users.findAll( {attributes: {
+    var inFind = api.genQueryParameters(req, [''], ['fromtown', 'totown']);
+    models.cities_scheduled.findAll(inFind)
+        .then((data) => {
+            // console.log(data)
+            api.ok(res, data);
+        }).catch((e) => {
+            // console.log(req.body.password);
+            api.error(res, 'Error ' + e, 500);
+        });
+}
 
-    }).save().then(() =>{
-      api.ok(res, null);
-    }).catch(e =>{
-      api.error(res, "Could not process your request", 500);
-    });
-  }
-  function profile(req, res, next) {
-    models.user.findById(
-      req.params.id,
-      {attributes: {
-        exclude: ['password']
-      }})
-          .then((userL) =>{
-            //var data = userL.dataValues;
-            api.ok(userL)
-          }).catch((e)=>{
-            api.error(res, e, 500);
-          });
-  }
-  */
+
 module.exports = {
-  list
-  /*,
-  login,
-  register,
-  profile
-  */
+    list,
+    scheduledroutes
 
 };

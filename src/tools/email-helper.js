@@ -1,11 +1,8 @@
 import nodemailer from 'nodemailer';
-
 // Generate test SMTP service account from ethereal.email
 // Only needed if you don't have a real mail account for testing
-
 function helpMail(){
     nodemailer.createTestAccount((err, account) => {
-
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
         host: 'smtp.ethereal.email',
@@ -16,7 +13,6 @@ function helpMail(){
             pass: 'RNSGRTtejbZvKUrhu3' // generated ethereal password
         }
     });
-
     // setup email data with unicode symbols
     let mailOptions = {
         from: '"Fred Foo 👻" <foo@blurdybloop.com>', // sender address

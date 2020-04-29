@@ -5,34 +5,69 @@ import config from '../config/settings';
 
 import md5 from 'md5';
 // var md5 = require('md5');
+/*
+async function printFiles () {
+  const files = await getFilePaths();
 
-function login(req, res, next) {
+  for (const file of files) {
+    const contents = await fs.readFile(file, 'utf8');
+    console.log(contents);
+  }
+}
+*/
+async function login(req, res, next) {
     // password: crypto.createHash('md5').update(password).digest("hex")
-
     // console.log(crypto.createHash('md5').update(req.body.password).digest("hex"));
-    console.log(md5(req.body.password));
+    // console.log(md5(req.body.password));
+    // console.dir(req.body);
     // return(next);
+    var username, password = '';
+    username = req.body.username;
+    password = req.body.password;
+    // var docLogEs6 = () => { console.log(document); };
+    var countToaMillion = await countToaMillionx(1500);
+    console.log("finished counting " + countToaMillion);
+    console.log("proceded after counting " + countToaMillion);
+    var countagain = await countToaMillionx(2000);
+    console.log("counting again" + countagain);
 
-    models.uccaduser.findOne({
-        where: {
-            Login: req.body.username,
-            Password: md5(req.body.password), ///req.body.password
-            statuus: 'active'
-        }
-    }).then((userL) => {
-        var data = userL.dataValues;
-        var theToken = jwt.sign({ IdUser: data.IdUser, username: data.Login, realnames: data.Nome }, config.security.salt, { expiresIn: 24 * 60 * 60 });
-        console.log("sallllllllllllaaaaallllllt====>>>" + jwt.decode(theToken));
-        console.dir(jwt.decode(theToken));
+    if (username != undefined && password != undefined) {
+        // console.dir(" =========Validating============ ");
+        models.uccaduser.findOne({
+            where: {
+                Login: username,
+                Password: md5(password), ///req.body.password
+                status: 'active'
+            }
+        }).then((userL) => {
+            console.log('found user');
+            var data = userL.dataValues;
+            var theToken = jwt.sign({
+                IdUser: data.IdUser,
+                username: data.Login,
+                realnames: data.Nome,
+                IdUser: data.IdUser
+            }, config.security.salt, { expiresIn: 24 * 60 * 60 });
+            // console.log("sallllllllllllaaaaallllllt====>>>" + jwt.decode(theToken));
+            // console.dir(jwt.decode(theToken));
+            // console.log("sallllllllllllaaaaallllllt====>>>" + jwt.decode(theToken).realnames);
+            api.ok(res, { 'token': theToken });
+        }).catch((e) => {
+            // console.log(req.body.password);
+            api.error(res, 'Wrong credentials ' + e, 500);
+        });
+    } else {
+        api.error(res, 'User Name and Password are required ', 500);
+    }
+}
 
-        console.log("sallllllllllllaaaaallllllt====>>>" + jwt.decode(theToken).realnames);
-        api.ok(res, { 'token': theToken });
-    }).catch((e) => {
-        // console.log(req.body.password);
-        api.error(res, 'Wrong credentials ' + e, 500);
-    });
-
-
+function countToaMillionx(count) {
+    var i = 0;
+    console.log("started counting " + count);
+    while (i < count) {
+        i++;
+    }
+    return i;
 }
 
 function list(req, res) {

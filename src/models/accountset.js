@@ -96,6 +96,47 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       defaultValue: 'No',
       comment: "null"
+    },
+    'isbankaccount': {
+      type: DataTypes.ENUM('Yes','No'),
+      allowNull: true,
+      defaultValue: 'No',
+      comment: "null"
+    },
+    'bank_code': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'bank_name': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'branch_name': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'account_no': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'currency': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'exchangerate': {
+      type: DataTypes.FLOAT,
+      allowNull: true,
+      comment: "null"
+    },
+    'isactive': {
+      type: DataTypes.ENUM('Yes','No'),
+      allowNull: true,
+      comment: "null"
     }
   }, {
     tableName: 'accountset'

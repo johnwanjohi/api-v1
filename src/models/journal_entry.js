@@ -31,22 +31,22 @@ module.exports = function(sequelize, DataTypes) {
       comment: "null"
     },
     'debit_amount': {
-      type: DataTypes.FLOAT,
+      type: DataTypes.DECIMAL,
       allowNull: true,
       comment: "null"
     },
     'credit_amount': {
-      type: DataTypes.FLOAT,
+      type: DataTypes.DECIMAL,
       allowNull: true,
       comment: "null"
     },
     'credit_amountug': {
-      type: DataTypes.FLOAT,
+      type: DataTypes.DECIMAL,
       allowNull: true,
       comment: "null"
     },
     'debit_amountug': {
-      type: DataTypes.FLOAT,
+      type: DataTypes.DECIMAL,
       allowNull: true,
       comment: "null"
     },
@@ -57,11 +57,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     'date_entered': {
       type: DataTypes.DATE,
-      allowNull: true,
+      allowNull: false,
+      defaultValue: sequelize.fn('current_timestamp'),
       comment: "null"
     },
     'journal_description': {
-      type: DataTypes.STRING(50),
+      type: DataTypes.TEXT,
       allowNull: true,
       comment: "null"
     },
@@ -76,6 +77,54 @@ module.exports = function(sequelize, DataTypes) {
       comment: "null"
     },
     'sub_station': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'editedby': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'dateedited': {
+      type: DataTypes.DATE,
+      allowNull: true,
+      defaultValue: sequelize.fn('current_timestamp'),
+      comment: "null"
+    },
+    'currency': {
+      type: DataTypes.STRING(10),
+      allowNull: true,
+      defaultValue: 'KES',
+      comment: "null"
+    },
+    'exchangerate': {
+      type: DataTypes.FLOAT,
+      allowNull: true,
+      comment: "null"
+    },
+    'name': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'convertedamount': {
+      type: DataTypes.DECIMAL,
+      allowNull: true,
+      comment: "null"
+    },
+    'isopeningbalance': {
+      type: DataTypes.ENUM('YES','NO'),
+      allowNull: true,
+      defaultValue: 'NO',
+      comment: "null"
+    },
+    'transactiontype': {
+      type: DataTypes.ENUM('CREDIT','DEBIT'),
+      allowNull: true,
+      comment: "null"
+    },
+    'category': {
       type: DataTypes.STRING(50),
       allowNull: true,
       comment: "null"

@@ -1,6 +1,6 @@
 module.exports = {
     database: {
-        name: 'trucks2',
+        name: 'trucks2apitest',
         user: 'crownbus_root',
         pass: 'Ziggie6818',
         host: 'localhost',

@@ -101,7 +101,7 @@ module.exports = function(sequelize, DataTypes) {
       comment: "null"
     },
     'status': {
-      type: DataTypes.STRING(50),
+      type: DataTypes.ENUM('Active','Not Active'),
       allowNull: true,
       defaultValue: 'Active',
       comment: "null"

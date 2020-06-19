@@ -58,6 +58,22 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       comment: "null"
     },
+    'datecreated': {
+      type: DataTypes.DATE,
+      allowNull: true,
+      defaultValue: sequelize.fn('current_timestamp'),
+      comment: "null"
+    },
+    'booktype': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'editedby': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
     'date_edited': {
       type: DataTypes.DATE,
       allowNull: true,

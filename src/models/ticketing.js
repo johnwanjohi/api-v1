@@ -420,7 +420,7 @@ module.exports = function(sequelize, DataTypes) {
       comment: "null"
     },
     'checkedincomment': {
-      type: DataTypes.STRING(100),
+      type: DataTypes.TEXT,
       allowNull: true,
       comment: "null"
     }

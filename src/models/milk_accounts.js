@@ -50,6 +50,38 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: true,
       comment: "null"
+    },
+    'sub_station': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'created': {
+      type: DataTypes.DATE,
+      allowNull: true,
+      defaultValue: sequelize.fn('current_timestamp'),
+      comment: "null"
+    },
+    'eidtedby': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'dateedited': {
+      type: DataTypes.DATE,
+      allowNull: true,
+      comment: "null"
+    },
+    'payment_mode': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      defaultValue: 'CASH',
+      comment: "null"
+    },
+    'm_pesa_code': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
     }
   }, {
     tableName: 'milk_accounts'

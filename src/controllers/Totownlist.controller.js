@@ -19,23 +19,7 @@ function list(req, res) {
             api.error(res, 'Error ' + e, 500);
         });
 }
-/*
-function login(req, res, next){
-  models.users.find({
-    where : {
-      email : req.body.email,
-      password : req.body.password
-    }
-  }).then((userL) =>{
-    var data = userL.dataValues;
-    var theToken = jwt.sign({ user : data.id, email : data.email}, config.security.salt, {expiresIn: 24 * 60 * 60});
-    api.ok(res, {'token' : theToken});
-  }).catch((e)=>{
-    api.error(res, 'Wrong credentials', 500);
-  });
 
-}
-*/
 module.exports = {
     list
     /*,

@@ -53,6 +53,7 @@ module.exports = function(sequelize, DataTypes) {
     'amount': {
       type: DataTypes.FLOAT,
       allowNull: true,
+      defaultValue: '0.00000',
       comment: "null"
     },
     'transdate': {
@@ -88,6 +89,7 @@ module.exports = function(sequelize, DataTypes) {
     'amountug': {
       type: DataTypes.FLOAT,
       allowNull: true,
+      defaultValue: '0.00000',
       comment: "null"
     },
     'banking_type': {

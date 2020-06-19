@@ -77,6 +77,18 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       defaultValue: sequelize.fn('current_timestamp'),
       comment: "null"
+    },
+    'currency': {
+      type: DataTypes.STRING(10),
+      allowNull: true,
+      defaultValue: 'KES',
+      comment: "null"
+    },
+    'exchangerate': {
+      type: DataTypes.FLOAT,
+      allowNull: true,
+      defaultValue: '1',
+      comment: "null"
     }
   }, {
     tableName: 'bank_setup'

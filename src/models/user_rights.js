@@ -572,6 +572,36 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       defaultValue: '0',
       comment: "null"
+    },
+    'Journal_Entry': {
+      type: DataTypes.INTEGER(1),
+      allowNull: true,
+      defaultValue: '0',
+      comment: "null"
+    },
+    'Milk_Entries_Delete': {
+      type: DataTypes.INTEGER(1),
+      allowNull: true,
+      defaultValue: '0',
+      comment: "null"
+    },
+    'Delete_Journal': {
+      type: DataTypes.INTEGER(1),
+      allowNull: true,
+      defaultValue: '0',
+      comment: "null"
+    },
+    'Accounts_Reports': {
+      type: DataTypes.INTEGER(1),
+      allowNull: true,
+      defaultValue: '0',
+      comment: "null"
+    },
+    'Conductors_LSheet': {
+      type: DataTypes.INTEGER(1),
+      allowNull: true,
+      defaultValue: '0',
+      comment: "null"
     }
   }, {
     tableName: 'user_rights'

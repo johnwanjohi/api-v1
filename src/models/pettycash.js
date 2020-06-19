@@ -247,6 +247,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       defaultValue: sequelize.fn('current_timestamp'),
       comment: "null"
+    },
+    'loader': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
     }
   }, {
     tableName: 'pettycash'

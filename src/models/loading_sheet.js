@@ -75,6 +75,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: true,
       comment: "null"
+    },
+    'loader': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
     }
   }, {
     tableName: 'loading_sheet'

@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('loaded_waybills', {
+  return sequelize.define('loaded_waybillsxx', {
     'ref': {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -57,35 +57,8 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       defaultValue: sequelize.fn('current_timestamp'),
       comment: "null"
-    },
-    'conductor_accept': {
-      type: DataTypes.ENUM('Yes','No'),
-      allowNull: true,
-      defaultValue: 'No',
-      comment: "null"
-    },
-    'conductor_acceptdate': {
-      type: DataTypes.DATE,
-      allowNull: true,
-      comment: "null"
-    },
-    'conductor_name': {
-      type: DataTypes.STRING(50),
-      allowNull: true,
-      comment: "null"
-    },
-    'conductor_release': {
-      type: DataTypes.ENUM('Yes','No'),
-      allowNull: true,
-      defaultValue: 'No',
-      comment: "null"
-    },
-    'conductor_releasedate': {
-      type: DataTypes.DATE,
-      allowNull: true,
-      comment: "null"
     }
   }, {
-    tableName: 'loaded_waybills'
+    tableName: 'loaded_waybillsxx'
   });
 };

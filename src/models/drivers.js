@@ -237,6 +237,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       defaultValue: 'Yes',
       comment: "null"
+    },
+    'terminatedby': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
     }
   }, {
     tableName: 'drivers'

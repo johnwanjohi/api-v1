@@ -24,6 +24,27 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: false,
       comment: "null"
+    },
+    'createdby': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'datecreated': {
+      type: DataTypes.DATE,
+      allowNull: true,
+      defaultValue: sequelize.fn('current_timestamp'),
+      comment: "null"
+    },
+    'editedby': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'dateedited': {
+      type: DataTypes.DATE,
+      allowNull: true,
+      comment: "null"
     }
   }, {
     tableName: 'tblstockcategories_sub'

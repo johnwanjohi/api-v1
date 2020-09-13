@@ -7,8 +7,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true,
       primaryKey: true,
-      comment: "null",
-      autoIncrement: true
+      comment: "null"
     },
     'user_ref': {
       type: DataTypes.INTEGER(11),
@@ -598,6 +597,12 @@ module.exports = function(sequelize, DataTypes) {
       comment: "null"
     },
     'Conductors_LSheet': {
+      type: DataTypes.INTEGER(1),
+      allowNull: true,
+      defaultValue: '0',
+      comment: "null"
+    },
+    'Loading_Sheet_Report': {
       type: DataTypes.INTEGER(1),
       allowNull: true,
       defaultValue: '0',

@@ -16,21 +16,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
-      comment: "null",
-      references: {
-        model: 'companies',
-        key: 'id'
-      }
+      comment: "null"
     },
     'UserId': {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
-      comment: "null",
-      references: {
-        model: 'users',
-        key: 'id'
-      }
+      comment: "null"
     }
   }, {
     tableName: 'usercompany'

@@ -1,6 +1,6 @@
 module.exports = {
     database: {
-        name: 'trucks2apitest',
+        name: 'trucks2',
         user: 'crownbus_root',
         pass: 'Ziggie6818',
         host: 'localhost',
@@ -14,6 +14,9 @@ module.exports = {
         urlPref: '/api/v1/'
     },
     security: {
+        salt: '8j879mXXm98?'
+    },
+    mysecret: {
         salt: '8j879mXXm98?'
     }
 }

@@ -7,8 +7,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true,
       primaryKey: true,
-      comment: "null",
-      autoIncrement: true
+      comment: "null"
     },
     'IdUser': {
       type: DataTypes.INTEGER(11),
@@ -18,8 +17,7 @@ module.exports = function(sequelize, DataTypes) {
     'login': {
       type: DataTypes.STRING(50),
       allowNull: true,
-      comment: "null",
-      unique: true
+      comment: "null"
     },
     't_username': {
       type: DataTypes.STRING(50),

@@ -7,8 +7,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true,
       primaryKey: true,
-      comment: "null",
-      autoIncrement: true
+      comment: "null"
     },
     'vehicle_fuel_category': {
       type: DataTypes.ENUM('CATEGORY_S','CATEGORY_U'),

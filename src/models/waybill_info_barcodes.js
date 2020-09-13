@@ -7,8 +7,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true,
       primaryKey: true,
-      comment: "null",
-      autoIncrement: true
+      comment: "null"
     },
     'waybill_info_ref': {
       type: DataTypes.INTEGER(10),

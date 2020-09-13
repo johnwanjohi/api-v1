@@ -127,8 +127,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true,
       primaryKey: true,
-      comment: "null",
-      autoIncrement: true
+      comment: "null"
     },
     'sub_station': {
       type: DataTypes.STRING(100),

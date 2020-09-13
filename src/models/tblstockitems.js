@@ -7,8 +7,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true,
       primaryKey: true,
-      comment: "null",
-      autoIncrement: true
+      comment: "null"
     },
     'stockcategoryidf': {
       type: DataTypes.INTEGER(11),
@@ -54,6 +53,28 @@ module.exports = function(sequelize, DataTypes) {
     'photo': {
       type: DataTypes.STRING(50),
       allowNull: true,
+      comment: "null"
+    },
+    'createdby': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'datecreated': {
+      type: DataTypes.DATE,
+      allowNull: true,
+      defaultValue: sequelize.fn('current_timestamp'),
+      comment: "null"
+    },
+    'updatedby': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'dateupdated': {
+      type: DataTypes.DATE,
+      allowNull: true,
+      defaultValue: sequelize.fn('current_timestamp'),
       comment: "null"
     }
   }, {

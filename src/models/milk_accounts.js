@@ -27,22 +27,22 @@ module.exports = function(sequelize, DataTypes) {
       comment: "null"
     },
     'qty_20': {
-      type: DataTypes.FLOAT,
+      type: DataTypes.DECIMAL,
       allowNull: true,
       comment: "null"
     },
     'qty_10': {
-      type: DataTypes.FLOAT,
+      type: DataTypes.DECIMAL,
       allowNull: true,
       comment: "null"
     },
     'qty_5': {
-      type: DataTypes.FLOAT,
+      type: DataTypes.DECIMAL,
       allowNull: true,
       comment: "null"
     },
     'unit_cost': {
-      type: DataTypes.FLOAT,
+      type: DataTypes.DECIMAL,
       allowNull: true,
       comment: "null"
     },

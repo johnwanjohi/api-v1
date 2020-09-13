@@ -1,7 +1,7 @@
-import jwt from 'jsonwebtoken';
+// import jwt from 'jsonwebtoken';
 import models from '../config/sequelize';
 import api from '../tools/common';
-import config from '../config/settings';
+// import config from '../config/settings';
 
 function list(req, res) {
     console.dir("from town listing ", req.query);
@@ -22,10 +22,5 @@ function list(req, res) {
 
 module.exports = {
     list
-    /*,
-    login,
-    register,
-    profile
-    */
 
 };

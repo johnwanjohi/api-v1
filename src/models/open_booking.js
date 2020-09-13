@@ -112,6 +112,16 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       defaultValue: sequelize.fn('current_timestamp'),
       comment: "null"
+    },
+    'schedule_canceledby': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'dateschedulecanceled': {
+      type: DataTypes.DATE,
+      allowNull: true,
+      comment: "null"
     }
   }, {
     tableName: 'open_booking'

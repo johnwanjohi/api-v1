@@ -55,6 +55,14 @@ module.exports = function(sequelize, DataTypes) {
         'routecode': {
             type: DataTypes.STRING(256),
             comment: "null"
+        },
+        'seatsperrow': {
+            type: DataTypes.STRING(256),
+            comment: "null"
+        },
+        'bus_type': {
+            type: DataTypes.STRING(256),
+            comment: "null"
         }
     }, {
         tableName: 'cities_scheduled'

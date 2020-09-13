@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
       comment: "null"
     },
     'TransAmount': {
-      type: DataTypes.STRING(6),
+      type: DataTypes.STRING(10),
       allowNull: false,
       comment: "null"
     },

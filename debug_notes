@@ -3,3 +3,13 @@ https://www.codementor.io/@michaelumanah/how-to-set-up-babel-7-and-nodemon-with-
 
 1. >>> npm install babel-jest babel-core@^7.0.0-bridge.0 @babel/core regenerator-runtime
 1. >>> npm install babel-jest babel-core@^7.0.0-bridge.0 @babel/core regenerator-runtime
+>>> sequelize-auto -o './src/models' -d trucks2 -h localhost -u root -p 3306 -e mysql 
+
+Finally the following order of operations worked:
+
+delete your node_modules and package-lock.json (maybe this isn't necessary but just start with a clean slate just in case because this is what I did
+like ruslankhh said, run the following : npm i -D jest babel-jest babel-core@^7.0.0-bridge.0 @babel/core regenerator-runtime
+Now delete your node_modules and your package-lock.json again
+Now run npm install
+
+

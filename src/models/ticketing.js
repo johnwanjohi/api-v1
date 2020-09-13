@@ -297,8 +297,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true,
       primaryKey: true,
-      comment: "null",
-      autoIncrement: true
+      comment: "null"
     },
     'backoffice_update': {
       type: DataTypes.TEXT,
@@ -401,6 +400,7 @@ module.exports = function(sequelize, DataTypes) {
     'reservationtype': {
       type: DataTypes.ENUM('TEMPORARY','UNTILPAID'),
       allowNull: true,
+      defaultValue: 'TEMPORARY',
       comment: "null"
     },
     'checkedin': {
@@ -421,6 +421,21 @@ module.exports = function(sequelize, DataTypes) {
     },
     'checkedincomment': {
       type: DataTypes.TEXT,
+      allowNull: true,
+      comment: "null"
+    },
+    'residence': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'billrefno': {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+      comment: "null"
+    },
+    'mpesamobileno': {
+      type: DataTypes.STRING(50),
       allowNull: true,
       comment: "null"
     }

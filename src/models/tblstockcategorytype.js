@@ -5,9 +5,8 @@ module.exports = function(sequelize, DataTypes) {
     'stockcategorytypeid': {
       type: DataTypes.INTEGER(11),
       allowNull: false,
-      comment: "null",
-      autoIncrement: true,
-      unique: true
+      primaryKey: true,
+      comment: "null"
     },
     'stockcategoryidf': {
       type: DataTypes.INTEGER(11),

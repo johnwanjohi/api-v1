@@ -67,6 +67,12 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       defaultValue: 'No',
       comment: "null"
+    },
+    'isparking': {
+      type: DataTypes.ENUM('Yes','No'),
+      allowNull: true,
+      defaultValue: 'No',
+      comment: "null"
     }
   }, {
     tableName: 'locations'

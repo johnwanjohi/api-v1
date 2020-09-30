@@ -31,17 +31,31 @@ async function login(req, res, next) {
               username: data.Login,
               realnames: data.Nome,
               IdUser: data.IdUser,
-            };        
+            }; 
+            /*
+            jwt.sign({
+                data: 'foobar'
+              }, 'secret', { expiresIn: 60 * 60 });              
+              //or even better:              
+              jwt.sign({
+                data: 'foobar'
+              }, 'secret', { expiresIn: '1h' });
+            jwt.sign({
+              exp: Math.floor(Date.now() / 1000) + (60 * 60),
+              data: 'foobar'
+            }, 'secret');
+            */    
           var theToken = jwt.sign(
             tokenUserDet,
             config.security.salt, {
-              expiresIn: 1000 * 60
-            }            
+              // expiresIn: Math.floor(Date.now() / 1000) + (60 * 2),
+              expiresIn: 60*30,
+            }
           );
           var refreshToken = jwt.sign(
             tokenUserDet, 
             config.security.salt, {
-              expiresIn: 1000 * 60 * 30
+              expiresIn: Math.floor(Date.now() / 1000) + (60 * 5),
             }
             );
           const response = {

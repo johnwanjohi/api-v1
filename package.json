@@ -43,7 +43,7 @@
     "infobip": "^0.1.0",
     "infobip-nodejs": "0.0.1",
     "jade": "~1.11.0",
-    "jsonwebtoken": "^8.1.0",
+    "jsonwebtoken": "^9.0.0",
     "md5": "^2.2.1",
     "merge": "^1.2.1",
     "mocha": "^5.2.0",
